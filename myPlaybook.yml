@@ -11,13 +11,18 @@
       pip:
         name: docker-py
         version: 1.7.0
+    
+    - name: Creating a group
+      group:
+        name: somegroup
+        state: present
 
-    - name: Restart container
-      docker_container:
-        name: myNginxContainer
-        image: nginx
-        state: started
-        pull: yes
-        recreate: yes
-        ports:
-         - "9970:80"
+    # - name: Restart container
+    #   docker_container:
+    #     name: myNginxContainer
+    #     image: nginx
+    #     state: started
+    #     pull: yes
+    #     recreate: yes
+    #     ports:
+    #      - "9970:80"
